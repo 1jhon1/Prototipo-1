@@ -1,0 +1,57 @@
+<% include partes/_header %>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-7">
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <td>#</td>
+            <td>Nombre del Producto</td>
+            <td> Precio</td>
+            <td>Imagen</td>
+            <td>Acción</td>
+          </tr>
+        </thead>
+        <tbody>
+          <% if (data) { %>
+            <% for(var i = 0; i < data.length; i++) { %>
+              <tr>
+                <td><%= (i + 1) %></td>
+                <td><%= data[i].name %></td>
+                <td><%= data[i].address %></td>
+                <td><%= data[i].phone %></td>
+                <td>
+                  
+                  <a href="/update/<%= data[i].id %>" class="btn btn-info" >  Editar</a> <style>  .btn-info{ width:115px;} </style>
+                  <a href="/delete/<%= data[i].id %>" class="btn btn-danger">Eliminar</a>
+                </td>
+              </tr>
+            <% } %>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-5">
+      <div class="card-body">
+        <form action="/add" method="POST">
+          <div class="form-group">
+            <input type="text" name="name" placeholder="Nombre del producto" class="form-control" autofocus>
+          </div>
+          <div class="form-group">
+            <input type="text" name="address" placeholder="Precio" class="form-control">
+          </div>
+          <div class="form-group">
+            <input type="text" name="phone" placeholder="Imagen" class="form-control">
+          </div>
+
+          <button type="submit" class="btn btn-success">
+            Guardar Producto
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% include partes/_footer %>
