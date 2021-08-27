@@ -6,15 +6,16 @@
       <div class="card-body">
         <form action="/update/<%= data.id %>" method="POST">
           <div class="form-group">
-            <input type="text" name="name" value="<%= data.name%>" placeholder="Nombre del producto" class="form-control" autofocus>
+            <input type="text" name="Nombre_del_producto" value="<%= data.Nombre_del_producto%>" placeholder="Nombre del producto" class="form-control" autofocus>
           </div>
           <div class="form-group">
-            <input type="text" name="address" value="<%= data.address%>" placeholder="Precio" class="form-control">
+            <input type="text" name="Precio" value="<%= data.Precio%>" placeholder="Precio" class="form-control">
           </div>
           <div class="form-group">
-            <input type="text" name="phone" value="<%= data.phone%>" placeholder="Imagen" class="form-control">
+            <div class="col-sm-9"><input type="file" name="Imagen" value="<%= data.Imagen%>" class="form-control"> <br><b>  Limite de 3 MB por logo<br>
+              Tipos permitidos: jpeg, png, jpg, gif, svg;</b> <br></div>
           </div>
-
+          
           <button type="submit" class="btn btn-success">
             Guardar Producto
           </button>
