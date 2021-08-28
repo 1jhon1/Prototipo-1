@@ -17,12 +17,15 @@
           <% if (data) { %>
             <% for(var i = 0; i < data.length; i++) { %>
               <tr>
+                
                 <td><%= (i + 1) %></td>
                 <td><%= data[i].Nombre_del_producto %></td>
                 <td><%= data[i].Precio %></td>
-                <td><%= data[i].Imagen %></td>
+        
+                <td><img src="<%= data[i].Imagen %>"></td>
+              
                 <td>
-                  
+              
                   <a href="/update/<%= data[i].id %>" class="btn btn-info" >  Editar</a> <style>  .btn-info{ width:115px;} </style>
                   <a href="/delete/<%= data[i].id %>" class="btn btn-danger">Eliminar</a>
                 </td>
@@ -34,7 +37,7 @@
     </div>
     <div class="col-md-5">
       <div class="card-body">
-        <form action="/add" method="POST">
+        <form action="/add" enctype="multipart/form-data" method="POST" > 
           <div class="form-group">
             <input type="text" name="Nombre_del_producto" placeholder="Nombre del producto" class="form-control" autofocus>
           </div>
@@ -42,8 +45,8 @@
             <input type="text" name="Precio" placeholder="Precio" class="form-control">
           </div>
           <div class="form-group">
-            <div class="col-sm-9"><input type="file" name="Imagen" class="form-control"> <br><b>  Limite de 3 MB por logo<br>
-              Tipos permitidos: jpeg, png, jpg, gif, svg;</b> <br></div>
+            <div class="col-sm-9"><input type="file" name="Imagen" class="form-control"> 
+              </div>
           </div>
          
           
