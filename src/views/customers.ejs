@@ -1,4 +1,5 @@
-<% include partes/_header %>
+
+<% include partes/_header%>
 
 <div class="container mt-5">
   <div class="row">
@@ -37,7 +38,8 @@
     </div>
     <div class="col-md-5">
       <div class="card-body">
-        <form action="/add" enctype="multipart/form-data" method="POST" > 
+        
+        <form action="/add"  method="POST" > 
           <div class="form-group">
             <input type="text" name="Nombre_del_producto" placeholder="Nombre del producto" class="form-control" autofocus>
           </div>
@@ -55,9 +57,14 @@
             Guardar Producto
           </button>
         </form>
+      
       </div>
     </div>
   </div>
 </div>
 
-<% include partes/_footer %>
+<% include partes/_footer%>
+
+
+
+
