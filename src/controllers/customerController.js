@@ -30,7 +30,7 @@ controller.li = (req, res) => {
 };
 controller.l = (req, res) => {
   req.getConnection((err, conn) => {
-    conn.query('SELECT * FROM registro', (err, registro) => {
+    conn.query('SELECT * FROM entrada', (err, registro) => {
      if (err) {
       res.json(err);
      }
@@ -51,23 +51,29 @@ controller.save = (req, res) => {
   })
 };
 
-controller.user = (req, res) => {
-  const data = req.body;
+ controller.user = (req, res) => {
+  const {correo} = req.body;
   console.log(req.body)
   req.getConnection((err, connection) => {
-    const query = connection.query('INSERT INTO entrada set ?', data, (err, entrada) => {
+    
+    const query = connection.query('SELECT * FROM entrada where correo= ?', [correo], (err, entrada) => {
+      
       console.log(entrada)
       res.redirect('/tabla');
     })
+  
   })
 };
+
+
+  
 
 controller.registro = (req, res) => {
   const data = req.body;
   console.log(req.body)
   req.getConnection((err, connection) => {
-    const query = connection.query('INSERT INTO Registro set ?', data, (err, Registro) => {
-      console.log(Registro)
+    const query = connection.query('INSERT INTO entrada set ?', data, (err, entrada) => {
+      console.log(entrada)
       res.redirect('/');
     })
   })
