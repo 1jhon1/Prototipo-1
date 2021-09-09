@@ -37,7 +37,7 @@ app.use(myConnection(mysql, {
   host: ' mysql-1nodejs1.alwaysdata.net',
   user: '1nodejs1_free',
   password: 'teogra12345',
-  port: 3306,
+  
   database: '1nodejs1_crudnodejsmysql'
 }, 'single'));
 app.use(express.urlencoded({extended: false}));
