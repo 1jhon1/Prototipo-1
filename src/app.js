@@ -34,11 +34,11 @@ app.set('view engine', 'ejs');
 // middlewares
 app.use(morgan('dev'));
 app.use(myConnection(mysql, {
-  host: ' mysql-1nodejs1.alwaysdata.net',
-  user: '1nodejs1_free',
-  password: 'teogra12345',
-  
-  database: '1nodejs1_crudnodejsmysql'
+ host: 'localhost',
+  user: 'root',
+  //password: 'contraseña',
+  port: 3306,
+  database: 'crudnodejsmysql'
 }, 'single'));
 app.use(express.urlencoded({extended: false}));
 
